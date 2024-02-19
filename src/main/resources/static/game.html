@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>lats play the game</h1>
+    <h2>ROCK PAPER SCISSIOR</h2>
+    <a href="game.html">click here to play again</a>
+
+</body>
+<script>
+
+let gamestart = confirm("let's play ROCK PAPER SCISSIOR");
+while (gamestart) {
+    const userinput = prompt("Enter your input  ROCK or PAPER or SCISSIOR");
+    handsigns = ["rock", "paper", "scissior"];
+    const user = handsigns.indexOf(userinput.trim().toLowerCase())
+    const bot = Math.floor(Math.random() * 3);
+    if (user === -1 || user === bot) {
+        alert("Your input : " + handsigns[user] + "\n" + "computer input : " + handsigns[bot] + "\nResult : tryAgain");
+        continue;
+    }
+    else {
+        result = winner(user, bot) ? "player Wins" : "computer wins";
+        alert("Your input : " + handsigns[user] + "\n" + "computer input : " + handsigns[bot] + "\nResult : " + result);
+        break;
+    }
+}
+function winner(u, c) {
+    switch (u) {
+        case 0: return c === 2;
+        case 1: return c === 0;
+        case 2: return c === 1;
+    }
+}</script>
+</html>
